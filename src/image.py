@@ -104,6 +104,6 @@ class Image:
             for c in range(im.W):
                 if self.pixels[l][c] == im.pixels[l][c]:
                     s = s + 1
-        simil = (s/(self.H*self.W))*100
+        simil = (s/(self.H*self.W))
         return simil
 
