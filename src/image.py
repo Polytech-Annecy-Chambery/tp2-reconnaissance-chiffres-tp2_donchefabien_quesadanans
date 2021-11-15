@@ -75,13 +75,13 @@ class Image:
             for c in range (self.W):
                 if self.pixels[l][c] == 0 :
                     if l < l_min :  
-                          l = l_min
+                         l_min = l
                     if l > l_max:
-                        l = l_max
+                         l_max = l
                     if c < c_min:
-                        c = c_min
+                        c_min = c
                     if c > c_max :
-                        c = c_max
+                        c_max = c
         im = Image()
         im.set_pixels(self.pixels[l_min:l_max, c_min:c_max])
         return im
@@ -91,9 +91,8 @@ class Image:
     #==============================================================================
     def resize(self, new_H, new_W):
         im_resize = Image()
-        im_resize.set_pixels(np.zeros((new_H, new_W), dtype=np.uint8))
-        im_resize.pixels = resize(self.pixels, (new_H, new_W),0)
-        im_resize.pixels = np.uint8(im_resize.pixels*255)
+        im_resize.pixels = resize(self.pixels, (new_H, new_W), 0)
+        im_resize.set_pixels(np.uint8(im_resize.pixels*255))
         return im_resize
 
     #==============================================================================
