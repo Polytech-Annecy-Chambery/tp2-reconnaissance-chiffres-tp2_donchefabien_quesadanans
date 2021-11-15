@@ -100,8 +100,8 @@ class Image:
     #==============================================================================
     def similitude(self, im):
         s = 0
-        for l in range(self.H, im.H):
-            for c in range(self.W, im.W):
+        for l in range(im.H):
+            for c in range(im.W):
                 if self.pixels[l][c] == im.pixels[l][c]:
                     s = s + 1
         simil = (s/(self.H*self.W))*100
