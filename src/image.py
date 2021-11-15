@@ -105,5 +105,5 @@ class Image:
                 if self.pixels[l][c] == im.pixels[l][c]:
                     compte = compte + 1
         simil = (compte/(str(self.H)*str(self.W)))*100
-        print(str(simil))
+        return simil
 
